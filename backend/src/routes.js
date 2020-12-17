@@ -8,7 +8,8 @@ const animeControll = require('./controllers/animeControll');
 router.post('/auth', sessionControll.create);
 
 router.post('/sing_up', userControll.create);
-router.get('/user/:username', userControll.show);
+router.get('/user/:username', userControll.profile);
+router.get('/user/:username/animes', userControll.show);
 router.get('/user/:username/follows', animeControll.follow);
 router.get('/users', userControll.index);
 

@@ -56,3 +56,40 @@ img { height: 100vh; }
     left: 0px;
     margin: 15px 0px;
 }
+
+.left-slider {
+    background: #5573FF;
+    width: 100px;
+    height: 100vh;
+}
+.avatar-cusom {
+    position: absolute;
+    top: 127px;
+    width: 200px;
+    left: 130px;
+    height: 200px;
+    border-radius: 50%;
+    border: 8px solid #4EFFBF;
+    padding: 6px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.3fr 0.7fr 2fr 1fr;
+    grid-template-rows: 1fr 0.1fr 1.9fr;
+    gap: 0px 0px;
+  }
+  .backdrop { grid-area: 1 / 1 / 2 / 5; }
+  .leftbar { grid-area: 1 / 1 / 4 / 2; }
+  .itens-info { grid-area: 2 / 2 / 3 / 5; }
+  .painel {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". . ."
+      ". . .";
+    grid-area: 3 / 2 / 4 / 5;
+  }
+  .avatar { grid-area: 2 / 2 / 3 / 3; }
