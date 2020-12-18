@@ -44,52 +44,53 @@ img { height: 100vh; }
     border: none;
     background: #5073ff;
 }
-.description {
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0em;
-    text-align: right;
-    color: #5073ff;
-    left: 0px;
-    margin: 15px 0px;
-}
 
-.left-slider {
-    background: #5573FF;
-    width: 100px;
-    height: 100vh;
-}
-.avatar-cusom {
-    position: absolute;
-    top: 127px;
-    width: 200px;
-    left: 130px;
-    height: 200px;
-    border-radius: 50%;
-    border: 8px solid #4EFFBF;
-    padding: 6px;
-}
+/* 
+    page: pages .
+    author: swyssauro .
+*/
 
 .grid-container {
     display: grid;
-    grid-template-columns: 0.3fr 0.7fr 2fr 1fr;
-    grid-template-rows: 1fr 0.1fr 1.9fr;
-    gap: 0px 0px;
-  }
-  .backdrop { grid-area: 1 / 1 / 2 / 5; }
-  .leftbar { grid-area: 1 / 1 / 4 / 2; }
-  .itens-info { grid-area: 2 / 2 / 3 / 5; }
-  .painel {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 100px 0px 0px 1fr;
+    grid-template-rows: 0.6fr 0.2fr 2.2fr;
+    grid-gap: 0px 0px;
     gap: 0px 0px;
     grid-template-areas:
-      ". . ."
-      ". . .";
-    grid-area: 3 / 2 / 4 / 5;
+        "left-bar backdrop backdrop backdrop"
+        "left-bar info-bar info-bar info-bar"
+        "left-bar painel painel painel";
+    width: 100vw;
+    height: 100vh;
+}
+  .left-bar { grid-area: left-bar; background: #5073ff; }
+  .backdrop {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 0px 0px;
+    gap: 0px 0px;
+    background: #ECEFFF;
+    grid-template-areas: ".";
+    grid-area: backdrop;
+}
+  .info-bar {
+    display: grid;
+    grid-template-columns: 0.5fr 3.1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "avatar meta-info";
+    grid-area: info-bar;
   }
-  .avatar { grid-area: 2 / 2 / 3 / 3; }
+  .avatar { grid-area: avatar; }
+  .meta-info { grid-area: meta-info; }
+  .painel {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ".";
+    grid-area: painel;
+  }
