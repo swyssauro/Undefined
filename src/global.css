@@ -14,11 +14,6 @@ img {
   height: 100vh;
 }
 
-.container {
-  width: 100vw;
-  height: 100vh;
-}
-
 .left-bg {
   width: -webkit-fill-available;
   height: inherit;
@@ -27,11 +22,15 @@ img {
 
 .box-left {
   background: #5073ff;
-  width: 277px;
+  width: 120px;
 }
-
 .container-form {
   width: 50%;
+}
+
+.title-login {
+  font-size: 5vh;
+  color: #5073ff;
 }
 
 .input-login {
@@ -107,7 +106,11 @@ img {
   grid-template-areas: ".";
   grid-area: backdrop;
 }
-
+.li-left-ber {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
 .info-bar {
   display: grid;
   grid-template-columns: 0.5fr 3fr;
@@ -159,4 +162,50 @@ img {
 .description-perfil {
   font-size: 19px;
   color: #04040499;
+}
+
+
+
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.4fr 1.4fr 1.2fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "left-bar container descripton"
+    "left-bar container descripton"
+    "left-bar container descripton";
+}
+
+.left-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ".";
+  grid-area: left-bar;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ".";
+  grid-area: container;
+}
+
+.descripton {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ".";
+  grid-area: descripton;
 }
