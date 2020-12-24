@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import PrivateRoute from './private';
 
 import Home from '../pages/home';
 import Profile from '../pages/profile';
@@ -8,7 +9,7 @@ export default function Routes() {
         <BrowserRouter>
             <Switch>
                 <Route exact path='/' component={ Home } />
-                <Route exact path='/user/:username' component={ Profile } />
+                <PrivateRoute exact path="/user/:username" component={ Profile } />
             </Switch>
         </BrowserRouter>
     );
