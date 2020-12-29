@@ -5,13 +5,13 @@ import { useForm } from "react-hook-form";
 
 import { FiCornerDownRight, FiUser } from 'react-icons/fi';
 
-export default function FormLogin() {
+export default function FormRegister() {
 
     const history = useHistory();
     const { register, handleSubmit } = useForm();
 
     const onSubmit = async (data) => {
-        await api.post('auth', data)
+        await api.post('sing_up', data)
             .then(response => {
                 const { data } = response;
                 console.log(data);
@@ -19,14 +19,24 @@ export default function FormLogin() {
                 if (data) {
                     localStorage.setItem('crypto', data.crypto);
                     localStorage.setItem('username', data.username);
-                    history.push(`/${data.username}`);
+                    history.push('/');
                 }
             });
     }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} style={{ width: 'fit-content', height: '100vh', padding: '25%' }}>
-            <h1 className="title-login">Login</h1>
+            <h1 className="title-login">Register</h1>
+            <hr />
+            <input
+                autoComplete="off"
+                style={{ padding: '0 5%', border: '1px solid', borderRadius: '5px' }}
+                placeholder="username"
+                name="username"
+                className="input-login"
+                type="text"
+                ref={register}
+            />
             <hr />
             <div className="input-icon">
                 <div type="email" className="box-icon">

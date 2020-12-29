@@ -94,6 +94,21 @@ input:invalid {
   border-radius: 0px;
 }
 
+
+.list-sinopse-a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.style-box-icons {
+  background: #ffff;
+  width: 100px;
+  height: 100px;
+  border-radius: 7px;
+  padding: 34px;
+}
+
 .font-description {
   font-size: 31px;
   font-weight: 200;
