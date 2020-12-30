@@ -1,10 +1,12 @@
 
-import { Grid } from 'semantic-ui-react';
-import { useEffect, useState } from 'react';
 import api from "../services/axios";
-import { useParams } from "react-router-dom";
+import ErroPage from '../pages/404';
 import Waves from '../Image/midle-waves.svg';
 import Carousel from 'react-multi-carousel';
+
+import { useParams } from "react-router-dom";
+import { Grid } from 'semantic-ui-react';
+import { useEffect, useState } from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { FiUser } from 'react-icons/fi';
 
@@ -23,6 +25,9 @@ export default function Profile() {
             .then(response => setList(response.data))
     }, [params.username]);
 
+    if(!perfil) {
+        return <ErroPage />;
+    }
 
     const responsive = {
         superLargeDesktop: {
