@@ -7,46 +7,42 @@ import Carousel from 'react-multi-carousel';
 import { useParams } from "react-router-dom";
 import { Grid } from 'semantic-ui-react';
 import { useEffect, useState } from 'react';
-import { CircularProgressbar } from 'react-circular-progressbar';
 import { FiUser } from 'react-icons/fi';
+
+import ListaComp from '../components/ListaComp';
 
 export default function Profile() {
 
     const [perfil, setPerfil] = useState([]);
-    const [list, setList] = useState([]);
     const params = useParams();
 
     useEffect(() => {
-
         api.get(`user/${params.username}`)
             .then(response => setPerfil(response.data[0]))
-
-        api.get(`user/${params.username}/animes`)
-            .then(response => setList(response.data))
     }, [params.username]);
 
-    if(!perfil) {
+    if (!perfil) {
         return <ErroPage />;
     }
 
     const responsive = {
         superLargeDesktop: {
-          breakpoint: { max: 4000, min: 3000 },
-          items: 5
+            breakpoint: { max: 4000, min: 3000 },
+            items: 5
         },
         desktop: {
-          breakpoint: { max: 3000, min: 1024 },
-          items: 3
+            breakpoint: { max: 3000, min: 1024 },
+            items: 3
         },
         tablet: {
-          breakpoint: { max: 1024, min: 464 },
-          items: 2
+            breakpoint: { max: 1024, min: 464 },
+            items: 2
         },
         mobile: {
-          breakpoint: { max: 464, min: 0 },
-          items: 1
+            breakpoint: { max: 464, min: 0 },
+            items: 1
         }
-      };
+    };
 
     return (
         <Grid columns={2} divided>
@@ -60,14 +56,8 @@ export default function Profile() {
                     <img draggable="false" src={Waves} alt="waves" style={{ position: 'relative', float: 'right', left: '1px' }} />
                 </Grid.Column>
                 <Grid.Column>
-                <Carousel responsive={responsive}>
-                        {list.map((lista, index) =>
-                            <div key={index}>
-                                <img draggable="false" src={`https://image.tmdb.org/t/p/original${lista.poster}`} alt="poster" />
-                                <CircularProgressbar value={lista.rating} text={`${lista.rating}%`} />
-                                <h1>{lista.title}</h1>
-                            </div>
-                        )}
+                    <Carousel responsive={responsive}>
+                        <ListaComp />
                     </Carousel>
                 </Grid.Column>
             </Grid.Row>

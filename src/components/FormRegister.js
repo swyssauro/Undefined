@@ -19,7 +19,7 @@ export default function FormRegister() {
                 if (data) {
                     localStorage.setItem('crypto', data.crypto);
                     localStorage.setItem('username', data.username);
-                    history.push('/');
+                    history.push(`/${data.username}`);
                 }
             });
     }
