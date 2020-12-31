@@ -2,7 +2,6 @@
 import api from "../services/axios";
 import ErroPage from '../pages/404';
 import Waves from '../Image/midle-waves.svg';
-import Carousel from 'react-multi-carousel';
 
 import { useParams } from "react-router-dom";
 import { Grid } from 'semantic-ui-react';
@@ -25,25 +24,6 @@ export default function Profile() {
         return <ErroPage />;
     }
 
-    const responsive = {
-        superLargeDesktop: {
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 3
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1
-        }
-    };
-
     return (
         <Grid columns={2} divided>
             <Grid.Row>
@@ -56,9 +36,7 @@ export default function Profile() {
                     <img draggable="false" src={Waves} alt="waves" style={{ position: 'relative', float: 'right', left: '1px' }} />
                 </Grid.Column>
                 <Grid.Column>
-                    <Carousel responsive={responsive}>
                         <ListaComp />
-                    </Carousel>
                 </Grid.Column>
             </Grid.Row>
         </Grid>
