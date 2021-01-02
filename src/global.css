@@ -150,14 +150,32 @@ input:invalid {
   margin-left: 0rem !important;
   margin-right: 0rem !important;
 }
+
 .ui.divided.two.column.grid {
   width: 100vw;
   height: 100vh;
 }
+
 .ui.grid>.row {
   padding-top: 0rem !important;
   padding-bottom: 0rem !important;
 }
+
 .ui.divided.grid:not([class*="vertically divided"])>.column:not(.row), .ui.divided.grid:not([class*="vertically divided"])>.row>.column {
   box-shadow: 0px 0 0 0 rgba(34,36,38,.15) !important;
+}
+
+.p-error-box {
+  margin: 0px;
+  padding: 9px 5%;
+  margin: 7px 0px;
+  border: 1px solid #ff3b3b;
+  color: #ff3b3b;
+  border-radius: 5px;
+}
+
+.title-welcome {
+  font-size: 7vh;
+  color: #bcff65;
+  text-decoration: underline;
 }

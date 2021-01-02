@@ -2,13 +2,13 @@ import api from "../services/axios";
 
 import { useHistory } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-
+import { ErrorMessage } from '@hookform/error-message';
 import { FiCornerDownRight, FiUser } from 'react-icons/fi';
 
 export default function FormRegister() {
 
     const history = useHistory();
-    const { register, handleSubmit } = useForm();
+    const { register, errors ,handleSubmit } = useForm();
 
     const onSubmit = async (data) => {
         await api.post('sing_up', data)
@@ -28,6 +28,7 @@ export default function FormRegister() {
         <form onSubmit={handleSubmit(onSubmit)} style={{ width: 'fit-content', height: '100vh', padding: '25%' }}>
             <h1 className="title-login">Register</h1>
             <hr />
+            <ErrorMessage errors={errors} name="username" />
             <input
                 autoComplete="off"
                 style={{ padding: '0 5%', border: '1px solid', borderRadius: '5px' }}
@@ -35,9 +36,12 @@ export default function FormRegister() {
                 name="username"
                 className="input-login"
                 type="text"
-                ref={register}
+                ref={register({
+                    required: (<p className="p-error-box">username is required</p>)
+                })}
             />
             <hr />
+            <ErrorMessage errors={errors} name="email" />
             <div className="input-icon">
                 <div type="email" className="box-icon">
                     <FiUser className="icon-style-input" />
@@ -49,10 +53,13 @@ export default function FormRegister() {
                     name="email"
                     className="input-login"
                     type="email"
-                    ref={register}
+                    ref={register({
+                        required: (<p className="p-error-box">email is required</p>)
+                    })}
                 />
             </div>
             <hr />
+            <ErrorMessage errors={errors} name="password" />
             <input
                 autoComplete="off"
                 style={{ padding: '0 5%', border: '1px solid', borderRadius: '5px' }}
@@ -60,7 +67,9 @@ export default function FormRegister() {
                 name="password"
                 className="input-login"
                 type="password"
-                ref={register}
+                ref={register({
+                    required: (<p className="p-error-box">password is required</p>)
+                })}
             />
             <hr />
             <div className="div-submit">

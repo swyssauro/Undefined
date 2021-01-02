@@ -1,7 +1,7 @@
 import { Grid } from 'semantic-ui-react';
 import Waves from '../Image/midle-waves.svg';
 import FormRegister from '../components/FormRegister';
-import { FiUser } from 'react-icons/fi';
+import { VscPerson } from 'react-icons/vsc';
 
 export default function Register() {
 
@@ -10,7 +10,7 @@ export default function Register() {
       <Grid.Row>
         <Grid.Column style={{ background: '#006aff' }}>
           <div className="left-box-description">
-            <div className="style-box-icons"><FiUser color="#006aff" size="30" /></div>
+            <div className="style-box-icons"><VscPerson color="#006aff" size="30" /></div>
             <h1 className="title-left-box">Registre-se Gratuitamente</h1>
             <p className="font-description">Já possui uma conta? Faça login aqui.</p>
           </div>
