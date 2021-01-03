@@ -13,7 +13,7 @@ export default function Routes() {
             <Switch>
                 <Route exact path='/sign-in' component={ Home } />
                 <Route exact path='/sign-up' component={ Register } />
-                <PrivateRoute exact path='/welcome' component={ Welcome } />
+                <PrivateRoute exact path='/welcome/:tmdb' component={ Welcome } />
                 <PrivateRoute exact path="/:username" component={ Profile } />
                 <Route component={ Erro404 } />
             </Switch>

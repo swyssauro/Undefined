@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 
 export default function Lista() {
-
     const [list, setList] = useState([]);
     const params = useParams();
 
@@ -17,10 +16,8 @@ export default function Lista() {
 
     return (
         <div>
-            { list.map((lista, index) =>
-                <div key={index}>
-                    <img draggable="false" src={`https://image.tmdb.org/t/p/original${lista.poster}`} alt="poster" />
-                </div>
+             {list.map((lista, index) =>
+                <img key={index} style={{ height: '20pc', borderRadius: '7px' }} draggable="false" src={`https://image.tmdb.org/t/p/original${lista.poster}`} alt="poster" />
             )}
         </div>
     )
