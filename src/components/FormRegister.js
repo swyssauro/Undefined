@@ -16,7 +16,7 @@ export default function FormRegister() {
                 const { data } = response;
                 console.log(data);
 
-                if (data) {
+                if ( data ) {
                     localStorage.setItem('crypto', data.crypto);
                     localStorage.setItem('username', data.username);
                     history.push(`/${data.username}`);

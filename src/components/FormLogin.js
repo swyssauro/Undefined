@@ -26,7 +26,7 @@ export default function FormLogin() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} style={{ width: 'fit-content', height: '100vh', padding: '25%' }}>
-            <h1 className="title-login">Login</h1>
+            <h1 className="title-login">sign-in</h1>
             <hr />
             <ErrorMessage errors={errors} name="email" />
             <div className="input-icon">
