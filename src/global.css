@@ -165,6 +165,16 @@ input:invalid {
   box-shadow: 0px 0 0 0 rgba(34,36,38,.15) !important;
 }
 
+.react-multi-carousel-item {
+  width: auto !important;
+}
+
+.post-img-show {
+  height: 15pc;
+  margin-right: 5px;
+  border-radius: 7px;
+}
+
 .p-error-box {
   margin: 0px;
   padding: 9px 5%;
