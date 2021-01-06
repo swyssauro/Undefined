@@ -17,13 +17,13 @@ function RightArrow(props) {
   return <FiArrowRight onClick={onClick} size={25} color="#006aff" />;
 }
 
-export default function Lista() {
+export default function ListaFav() {
   const [list, setList] = useState([]);
   const params = useParams();
 
   useEffect(() => {
     api
-      .get(`user/${params.username}/animes`)
+      .get(`user/${params.username}/follows`)
       .then((response) => setList(response.data));
   }, [params.username]);
 
@@ -68,6 +68,7 @@ export default function Lista() {
       },
     ],
   };
+
   return (
     <>
       <Slider centerMode={true} {...settings}>
