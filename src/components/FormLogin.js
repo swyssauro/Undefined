@@ -27,11 +27,7 @@ export default function FormLogin() {
       onSubmit={handleSubmit(onSubmit)}
       style={{ width: "fit-content", height: "100vh", padding: "25%" }}
     >
-      <div className="style-box-icons" style={{ background: "#006aff" }}>
-        {" "}
-        <FiUser color="#FFF" size="30" />{" "}
-      </div>
-      <h1 className="title-login">sign-in</h1>
+      <h1 className="title-login">Iniciar sessão</h1>
       <hr />
       <ErrorMessage errors={errors} name="email" />
       <div className="input-icon">
