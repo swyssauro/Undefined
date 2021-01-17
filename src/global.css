@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700&display=swap');
 
-* { margin: 0; padding: 0; font-family: 'Poppins', sans-serif !important; }
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif !important; }
 
-hr { margin: 7px; border: none; }
+/*hr { margin: 7px; border: none; }
 
 img { height: 100vh; }
 
@@ -189,3 +189,4 @@ input:invalid {
   color: #bcff65;
   text-decoration: underline;
 }
+*/

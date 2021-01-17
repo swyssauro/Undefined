@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import PrivateRoute from "./private";
 
-import Home from "../pages/home";
+import SignIn from "../pages/sign-in/";
 import Register from "../pages/register";
 import Profile from "../pages/profile";
 import Anime from "../pages/animes";
@@ -12,7 +12,7 @@ export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/sign-in" component={Home} />
+        <Route exact path="/sign-in" component={SignIn} />
         <Route exact path="/sign-up" component={Register} />
         <PrivateRoute exact path="/welcome/:tmdb" component={Welcome} />
         <PrivateRoute exact path="/anime/:nome" component={Anime} />
