@@ -2,9 +2,9 @@ import api from "../../services/axios";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
-
 import { FiCornerDownRight, FiUser } from "react-icons/fi";
-import './style.css'
+
+import "./style.css";
 
 export default function FormLogin() {
   const history = useHistory();
@@ -24,10 +24,7 @@ export default function FormLogin() {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-  
-    >
+    <form onSubmit={handleSubmit(onSubmit)}>
       <h1 className="title-login">Iniciar sessão</h1>
       <hr />
       <ErrorMessage errors={errors} name="email" />

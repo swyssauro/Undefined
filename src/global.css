@@ -102,14 +102,6 @@ input:invalid {
   text-overflow: ellipsis;
 }
 
-.style-box-icons {
-  background: #ffff;
-  width: 100px;
-  height: 100px;
-  border-radius: 7px;
-  padding: 34px;
-}
-
 .font-description {
   font-size: 31px;
   font-weight: 200;
